@@ -43,13 +43,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         User::create([
-            'id_user' => Auth::user()->id_user,
             'username' => request('username'),
             'password' => request('password'),
             'nm_user' => request('nm_user'),
             'nik' => request('nik'),
             'email' => request('email'),
-            'kabupaten' => request('kabupaten'),
             'no_telp' => request('no_telp'),
             'jns_kelamin' => request('jns_kelamin'),
             'foto_user' => request('foto_user'),
@@ -79,21 +77,19 @@ class UserController extends Controller
     
     public function edit($id)
     {
-        $user = Users::find($id);
+        $user = User::find($id);
         return view('users/edit_userAdmin', compact('user'));
     }
 
-    public function editProsesAdmin (Request $request, $id)
+    public function editUserProsesAdmin (Request $request, $id)
     {
         DB::table('users')->where('id_user', $id)
             -> update([
-                'id_user' => auth()->id(),
                 'username' => request('username'),
                 'password' => request('password'),
                 'nm_user' => request('nm_user'),
                 'nik' => request('nik'),
                 'email' => request('email'),
-                'kabupaten' => request('kabupaten'),
                 'no_telp' => request('no_telp'),
                 'jns_kelamin' => request('jns_kelamin'),
                 'foto_user' => request('foto_user'),

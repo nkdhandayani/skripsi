@@ -17,7 +17,18 @@ class AuthController extends Controller
     public function postlogin(Request $request)
     {
         if (Auth::attempt($request->only('username', 'password'))) {
-            return redirect('/adminis');
+            $user = \App\Models\User::where('username', $request->username)->first();
+            if ($user->level == '0') {
+                return response()->view('layout/dashboard_admin');
+            } elseif ($user->level == '1') {
+                return response()->view('layout/dashboard_staf');
+            } elseif ($user->level == '2') {
+                return response()->view('layout/dashboard_kepala');
+            }
+            else
+            {
+                return response()->view('auth.login');
+            }
         }
 
         return redirect('/login');

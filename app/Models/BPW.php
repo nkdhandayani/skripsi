@@ -31,6 +31,10 @@ class BPW extends Model
         'status',
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+
     public function user()
     {
         return $this->hasOne(User::class, 'id_user', 'id_user');

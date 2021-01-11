@@ -99,7 +99,7 @@ class LKUController extends Controller
         return view ('lku/edit_lkuBPW', compact('lku'));
     }
 
-    public function editProsesBPW (Request $request, $id)
+    public function editLKUProsesBPW (Request $request, $id)
     {
         DB::table('lku')->where('id_lku', $id)
             -> update([
@@ -117,7 +117,7 @@ class LKUController extends Controller
         return redirect('/list_lkuBPW');
     }
 
-    public function editProsesStaf (Request $request, $id)
+    public function editLKUProsesStaf (Request $request, $id)
     {
         DB::table('lku')->where('id_lku', $id)
             -> update([

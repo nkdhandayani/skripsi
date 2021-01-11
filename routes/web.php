@@ -25,13 +25,14 @@ Route::get('/', function () {
 	Route::get('/list_userAdmin', 'App\Http\Controllers\UserController@list');
 	Route::get('/tambah_userAdmin', 'App\Http\Controllers\UserController@index');
 	Route::get('/edit_userAdmin/edit/{id}', 'App\Http\Controllers\UserController@edit');
-	Route::patch('/editProsesAdmin/{id}', 'App\Http\Controllers\UserController@editProsesAdmin');
+	Route::patch('/editUserProsesAdmin/{id}', 'App\Http\Controllers\UserController@editUserProsesAdmin');
 
 	// Route BPW oleh Administrator
 	Route::get('/list_bpwAdmin', 'App\Http\Controllers\BPWController@listAdmin');
 	Route::get('/tambah_bpwAdmin', 'App\Http\Controllers\BPWController@index');
 	Route::get('/edit_bpwAdmin/edit/{id}', 'App\Http\Controllers\BPWController@edit');
-	Route::patch('/editProsesAdmin/{id}', 'App\Http\Controllers\BPWController@editProsesAdmin');
+	Route::patch('/editBPWProsesAdmin/{id}', 'App\Http\Controllers\BPWController@editBPWProsesAdmin');
+	Route::get('/detail_bpwAdmin/detail/{id}','App\Http\Controllers\BPWController@detailBPWAdmin');
 
 	// Route TDUP oleh Administrator
 	Route::get('/list_tdupAdmin', 'App\Http\Controllers\TDUPController@listAdmin');
@@ -50,17 +51,17 @@ Route::get('/', function () {
 	// Route TDUP oleh Staf
 	Route::get('/list_tdupStaf', 'App\Http\Controllers\TDUPController@listStaf');
 	Route::get('/edit_tdupStaf/edit/{id}', 'App\Http\Controllers\TDUPController@edit');
-	Route::patch('/editProsesStaf/{id}', 'App\Http\Controllers\TDUPController@editProsesStaf');
+	Route::patch('/editTDUPProsesStaf/{id}', 'App\Http\Controllers\TDUPController@editTDUPProsesStaf');
 
 	// Route Izin oleh Staf
 	Route::get('/list_izinStaf', 'App\Http\Controllers\IzinController@listStaf');
 	Route::get('/edit_izinStaf/edit/{id}', 'App\Http\Controllers\IzinController@edit');
-	Route::patch('/editProsesStaf/{id}', 'App\Http\Controllers\IzinController@editProsesStaf');
+	Route::patch('/editIzinProsesStaf/{id}', 'App\Http\Controllers\IzinController@editIzinProsesStaf');
 
 	// Route LKU oleh Staf
 	Route::get('/list_lkuStaf', 'App\Http\Controllers\LKUController@listStaf');
 	Route::get('/edit_lkuStaf/edit/{id}', 'App\Http\Controllers\LKUController@edit');
-	Route::patch('/editProsesStaf/{id}', 'App\Http\Controllers\LKUController@editProsesStaf');
+	Route::patch('/editLKUProsesStaf/{id}', 'App\Http\Controllers\LKUController@editLKUProsesStaf');
 	
 
 
@@ -73,75 +74,75 @@ Route::get('/', function () {
 	// Route BPW oleh BPW
 	Route::get('/list_bpwBPW', 'App\Http\Controllers\BPWController@listBPW');
 	Route::get('/edit_bpwBPW/edit/{id}', 'App\Http\Controllers\BPWController@edit');
-	Route::patch('/editProsesBPW/{id}', 'App\Http\Controllers\BPWController@editProsesBPW');
+	Route::patch('/editBPWProsesBPW/{id}', 'App\Http\Controllers\BPWController@editBPWProsesBPW');
 
 	// Route TDUP oleh BPW
 	Route::get('/list_tdupBPW', 'App\Http\Controllers\TDUPController@listBPW');
 	Route::get('/edit_tdupBPW/edit/{id}', 'App\Http\Controllers\TDUPController@edit');
-	Route::patch('/editProsesBPW/{id}', 'App\Http\Controllers\TDUPController@editProsesBPW');
+	Route::patch('/editTDUPProsesBPW/{id}', 'App\Http\Controllers\TDUPController@editTDUPProsesBPW');
 
 	// Route Izin oleh BPW
 	Route::get('/list_izinBPW', 'App\Http\Controllers\IzinController@listBPW');
 	Route::get('/edit_izinBPW/edit/{id}', 'App\Http\Controllers\IzinController@edit');
-	Route::patch('/editProsesBPW/{id}', 'App\Http\Controllers\IzinController@editProsesBPW');
+	Route::patch('/editIzinProsesBPW/{id}', 'App\Http\Controllers\IzinController@editIzinProsesBPW');
 
 	// Route LKU oleh BPW
 	Route::get('/list_lkuBPW', 'App\Http\Controllers\LKUController@listBPW');
 	Route::get('/edit_lkuBPW/edit/{id}', 'App\Http\Controllers\LKUController@edit');
-	Route::patch('/editProsesBPW/{id}', 'App\Http\Controllers\LKUController@editProsesBPW');
+	Route::patch('/editLKUProsesBPW/{id}', 'App\Http\Controllers\LKUController@editLKUProsesBPW');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::group(['middleware' => 'auth'], function() {
-	Route::get('/awal', 'App\Http\Controllers\AdminController@index');
-});
-Auth::routes(); 
-
-
-Route::get('/regis', 'App\Http\Controllers\InsertRegister@insert');
 Route::resource('bpw', 'App\Http\Controllers\BPWController');
-
-
-
-Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
-
-
 Route::resource('tdup', 'App\Http\Controllers\TDUPController');
 Route::resource('izin', 'App\Http\Controllers\IzinController');
 Route::resource('lku', 'App\Http\Controllers\LKUController');
-Route::resource('users', 'App\Http\Controllers\UserController');
+Route::resource('user', 'App\Http\Controllers\UserController');
 
 
 
-Route::get('/lte', function () {
-    return view('adminLTE');
-});
-Route::get('/master', function () {
-    return view('layout.master');
-});
-Route::get('/adminis', function () {
-    return view('layout.dashboard_admin');
-});
-Route::get('/blank', function () {
-    return view('layout.blank');
-});
-Route::get('/edit', function () {
-    return view('bpw.edit_bpwAdmin');
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::group(['middleware' => 'auth'], function() {
+// 	Route::get('/awal', 'App\Http\Controllers\AdminController@index');
+// });
+// Auth::routes(); 
+
+
+// Route::get('/regis', 'App\Http\Controllers\InsertRegister@insert');
+
+
+
+// Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
+
+
+
+
+
+// Route::get('/lte', function () {
+//     return view('adminLTE');
+// });
+// Route::get('/master', function () {
+//     return view('layout.master');
+// });
+// Route::get('/adminis', function () {
+//     return view('layout.dashboard_admin');
+// });
+// Route::get('/blank', function () {
+//     return view('layout.blank');
+// });
+// Route::get('/edit', function () {
+//     return view('bpw.edit_bpwAdmin');
+// });
 

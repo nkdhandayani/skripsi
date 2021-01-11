@@ -67,7 +67,7 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('users.store') }}" method="post" style="margin-left: 200px; margin-right: 200px">
+<form action="{{ route('user.store') }}" method="post">
 	{{csrf_field()}}
 
 <section class="content">
@@ -91,48 +91,52 @@
 		      	<label for="form_username">Username</label>
 		      	<input name="username" type="username" class="form-control" id="input_username">
 			</div>
-			<div class="form-group col-md-6" style="padding: 0px; padding-right: 10px">
+			<div class="form-group col-md-6" style="padding: 0px;">
 		  		<label for="form_password">Password</label>
 		   		<input name="password" type="password" class="form-control" id="input_password">
 			</div>
 		</div>
+		<div class="form-row">
 		<div class="form-group col-md-6" style="padding: 0; padding-right: 10px">
 		   	<label for="form_nik">NIK</label>
 		   	<input name="nik" type="text" class="form-control" id="input_nik">
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-6" style="padding: 0;">
 		   	<label for="form_Email">E-mail</label>
 		   	<input name="email"type="email" class="form-control" id="input_email">
 		</div>
+		</div>
+		<div class="form-row">
 		<div class="form-group col-md-6" style="padding: 0; padding-right: 10px">
 		   	<label for="form_no_telp">Nomor Telepon</label>
 		   	<input name="no_telp" type="text" class="form-control" id="input_no_telp">
 		</div>
-		<div class="form-row col-md-6">
-			<div class="form-group">
-			    <label for="form_jns_kelamin">Jenis Kelamin</label>
+		<div class="form-group col-md-6" style="padding: 0;">
+		    <label for="form_jns_kelamin">Jenis Kelamin</label>
 			    <select name="jns_kelamin" class="form-control" id="input_jns_kelamin">
 			    	<option selected>-- Pilih Jenis Kelamin --</option>
 				    <option value="1">Perempuan</option>
 				    <option value="0">Laki-laki</option>
 			    </select>
-			</div>
-		    <div class="form-group">
-			    <label for="form_level">Level</label>
+		</div>
+		</div>
+		<div class="form-row">
+		<div class="form-group col-md-6" style="padding: 0; padding-right: 10px">
+		    <label for="form_level">Level</label>
 			    <select name="level" class="form-control" id="input_level">
 			    	<option selected>-- Pilih Level --</option>
-				    <option value="1">Kepala Seksi Jasa Pariwisata</option>
-				    <option value="0">Staf Jasa Pariwisata</option>
+				    <option value="2">Kepala Seksi Jasa Pariwisata</option>
+				    <option value="1">Staf Jasa Pariwisata</option>
 			    </select>
-			</div>
-			<div class="form-group">
-			    <label for="form_status">Status</label>
+		</div>
+		<div class="form-group col-md-6" style="padding: 0;">
+		    <label for="form_status">Status</label>
 			    <select name="status" class="form-control" id="input_status">
 			    	<option selected>-- Pilih Status --</option>
 				    <option value="1">Aktif</option>
 				    <option value="0">Tidak Aktif</option>
 			    </select>
-			</div>
+		</div>
 		</div>
 
 		<div>

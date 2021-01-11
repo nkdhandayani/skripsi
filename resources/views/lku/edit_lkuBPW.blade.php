@@ -67,8 +67,16 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('izin.store') }}" method="post">
-	{{csrf_field()}}
+<form action="{{url('/editLKUProsesBPW/' .$lku->id_lku) }}" method="post">
+  {{csrf_field()}}
+
+<section class="content">
+<div class="box">
+
+  <!-- /.box-header -->
+  <!-- form start -->
+  <form role="form">
+  <div class="box-body">
 
 	<!-- <div class="form-group col-md-6">
     	<label for="form_nm_bpw">Nama BPW</label>
@@ -144,9 +152,12 @@
 	</div>
 
 	<div>
-	<button type="submit" class="btn btn-primary" style="margin-left: 15px; margin-top: 10px">Simpan Data LKU</button>
+	<button type="submit" class="btn btn-primary" style="margin-top: 10px">Simpan Data LKU</button>
 	</div>
+
+</div>
 </form>
+</div>
 
 @endsection
 

@@ -63,8 +63,16 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('tdup.store') }}" method="post">
-	{{csrf_field()}}
+<form action="{{url('/editTDUPProsesAdmin/' .$tdup->id_tdup) }}" method="post">
+  {{csrf_field()}}
+
+  <section class="content">
+  <div class="box">
+
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form role="form">
+    <div class="box-body">
 
 	<!-- <div class="form-group col-md-6">
     	<label for="form_nm_bpw">Nama BPW</label>
@@ -126,10 +134,13 @@
   </div> -->
 	
 	<div>
-	<button type="submit" class="btn btn-primary" style="margin-left: 15px; margin-top: 10px">Simpan TDUP</button>
+	<button type="submit" class="btn btn-primary" style="margin-top: 10px">Simpan TDUP</button>
 	</div>
+
+</div>
 </form>
-	
+</div>
+
 @endsection
 
 @section('content-footer')

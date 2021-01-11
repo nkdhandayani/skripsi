@@ -93,7 +93,7 @@
                 <td>{{ $izin->status }}</td>
                 <td>
                   <a href="{{url('detail_izinStaf', $izin -> id_izin)}}" class="btn btn-primary">View</a>
-                  <a href="{{url('edit_izinStaf', $izin -> id_izin)}}" class="btn btn-primary">Edit</a>
+                  <a href="/edit_izinStaf/edit/{{ $izin->id_izin }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
                 @php

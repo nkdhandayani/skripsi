@@ -105,10 +105,11 @@ class BPWController extends Controller
         return view ('bpw/edit_bpwAdmin', compact('bpw'));
     }
 
-    public function editProsesAdmin (Request $request, $id)
+    public function editBPWProsesAdmin (Request $request, $id)
     {
         DB::table('bpw')->where('id_bpw', $id)
             -> update([
+                'id_user' => Auth::user()->id_user,
                 'nm_bpw' => request('nm_bpw'),
                 'username' => request('username'),
                 'password' => request('password'),
@@ -139,6 +140,12 @@ class BPWController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function detailBPWAdmin($id)
+    {
+        $detailBPWAdmin = BPW::find($id);
+        return view ('bpw/detail_bpwAdmin',['detailBPWAdmin' => $detailBPWAdmin]);
     }
 
     /**

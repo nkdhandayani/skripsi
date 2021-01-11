@@ -78,7 +78,6 @@
             <th>Kabupaten</th>
             <th>Email</th>
             <th>No. Telp</th>
-            <th>Nama PIC</th>
             <th>Nama Pimpinan</th>
             <th>Status</th>
           </thead>
@@ -94,7 +93,6 @@
                 <td>{{ $bpw->kabupaten }}</td>
                 <td>{{ $bpw->email }}</td>
                 <td>{{ $bpw->no_telp }}</td>
-                <td>{{ $bpw->nm_pic }}</td>
                 <td>{{ $bpw->nm_pimpinan }}</td>
                 <td>
                 <?php if($bpw->status == 0)

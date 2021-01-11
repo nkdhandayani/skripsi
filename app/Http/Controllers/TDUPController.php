@@ -93,7 +93,7 @@ class TDUPController extends Controller
         return view ('tdup/edit_tdupBPW', compact('tdup'));
     }
 
-    public function editProsesBPW (Request $request, $id)
+    public function editTDUPProsesBPW (Request $request, $id)
     {
         DB::table('tdup')->where('id_tdup', $id)
             -> update([
@@ -109,7 +109,7 @@ class TDUPController extends Controller
         return redirect('/list_tdupBPW');
     }
 
-    public function editProsesStaf (Request $request, $id)
+    public function editTDUPProsesStaf (Request $request, $id)
     {
         DB::table('tdup')->where('id_tdup', $id)
             -> update([

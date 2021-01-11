@@ -95,6 +95,7 @@
                 <td>{{ $lku->status }}</td>
                 <td>
                   <a href="{{url('detail_lku', $lku -> id_lku)}}" class="btn btn-primary">View</a>
+                  <a href="/edit_lkuStaf/edit/{{ $lku->id_lku }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
                 @php

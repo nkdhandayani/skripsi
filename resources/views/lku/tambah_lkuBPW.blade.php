@@ -67,8 +67,16 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('lku.store') }}" method="post">
-	{{csrf_field()}}
+<form action="{{ route('bpw.store') }}" method="post">
+  {{csrf_field()}}
+
+  <section class="content">
+      <div class="box">
+
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+            <div class="box-body">
 
 	<!-- <div class="form-group col-md-6">
     	<label for="form_nm_bpw">Nama BPW</label>

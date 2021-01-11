@@ -95,7 +95,7 @@ class IzinController extends Controller
         return view ('izin/edit_izinBPW', compact('izin'));
     }
 
-    public function editProsesBPW (Request $request, $id)
+    public function editIzinProsesBPW (Request $request, $id)
     {
         DB::table('izin')->where('id_izin', $id)
             -> update([
@@ -110,7 +110,7 @@ class IzinController extends Controller
         return redirect('/list_bpwBPW');
     }
 
-    public function editProsesStaf (Request $request, $id)
+    public function editIzinProsesStaf (Request $request, $id)
     {
         DB::table('izin')->where('id_izin', $id)
             -> update([

@@ -75,7 +75,6 @@
             <th>Kabupaten</th>
             <th>Email</th>
             <th>No. Telp</th>
-            <th>Nama PIC</th>
             <th>Nama Pimpinan</th>
             <th>Status</th>
             <th style="text-align: center;">Aksi</th>
@@ -92,7 +91,6 @@
                 <td>{{ $bpw->kabupaten }}</td>
                 <td>{{ $bpw->email }}</td>
                 <td>{{ $bpw->no_telp }}</td>
-                <td>{{ $bpw->nm_pic }}</td>
                 <td>{{ $bpw->nm_pimpinan }}</td>
                 <td>
                 <?php if($bpw->status == 0)
@@ -111,7 +109,6 @@
                 </td>
                 <td style="text-align: center;">
                   <a href="{{url('detail_bpw', $bpw -> id_bpw)}}" class="btn btn-primary">View</a>
-                  <a href="{{url('detail_bpw', $bpw -> id_bpw)}}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
                 @php

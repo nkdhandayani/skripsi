@@ -68,7 +68,7 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('bpw.store') }}" method="post" style="margin-left: 200px; margin-right: 200px">
+<form action="{{ route('bpw.store') }}" method="post">
 	{{csrf_field()}}
 
 	<section class="content">
@@ -85,11 +85,11 @@
 		  	</div>
 		  	<div class="form-row">
 		    <div class="form-group col-md-6" style="padding: 0; padding-right: 10px">
-		      	<label for="form_sername">Username</label>
+		      	<label for="form_username">Username</label>
 		      	<input name="username" type="username" class="form-control" id="input_username">
 		    </div>
-		    <div class="form-group col-md-6" style="padding: 0px; padding-right: 10px">
-		      	<label for="form_assword">Password</label>
+		    <div class="form-group col-md-6" style="padding: 0px;">
+		      	<label for="form_password">Password</label>
 		      	<input name="password" type="password" class="form-control" id="input_password">
 		    </div>
 		  	</div>
@@ -121,8 +121,8 @@
 		      	<label for="form_no_telp">Nomor Telepon</label>
 		      	<input name="no_telp" type="text" class="form-control" id="input_no_telp">
 		    </div>
-		    <div class="form-group col-md-6">
-		      	<label for="form_no_fax" style="padding: 0; padding-right: 10px">Nomor Fax</label>
+		    <div class="form-group col-md-6" style="padding: 0;">
+		      	<label for="form_no_fax">Nomor Fax</label>
 		      	<input name="no_fax" type="text" class="form-control" id="input_no_fax">
 		    </div>
 			</div>
@@ -144,7 +144,7 @@
 				    <option value="Lanjut Usia">Lanjut Usia</option>
 			    </select>
 			</div>
-		    <div class="form-group  col-md-6" style="padding: 0; padding-right: 10px">
+		    <div class="form-group  col-md-6" style="padding: 0;">
 			    <label for="form_sts_kantor">Status Kantor</label>
 			    <select name="sts_kantor" class="form-control" id="input_sts_kantor">
 			    	<option selected>-- Pilih Status Kantor --</option>

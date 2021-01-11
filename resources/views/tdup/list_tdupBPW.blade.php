@@ -101,7 +101,7 @@
                 <td>{{ $tdup->status }}</td>
                 <td>
                   <a href="{{url('detail_tdup', $tdup -> id_tdup)}}" class="btn btn-primary">View</a>
-                  <a href="{{url('edit_tdupBPW', $tdup -> id_tdup)}}" class="btn btn-primary">Edit</a>       
+                  <a href="/edit_tdupBPW/edit/{{ $tdup->id_tdup }}" class="btn btn-primary">Edit</a>       
                 </td>
               </tr>
                 @php

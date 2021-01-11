@@ -134,7 +134,7 @@
                 </td>
                 <td style="text-align: center;">
                   <a href="{{ url ('users/detail_userAdmin', $users ->id_user) }}" class="btn btn-primary">View</a>
-                  <a href="{{ url ('edit_userAdmin', $users -> id_user) }}" class="btn btn-primary">Edit</a>
+                  <a href="/edit_userAdmin/edit/{{ $users->id_user }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
                 @php
