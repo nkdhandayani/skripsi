@@ -24,7 +24,8 @@ class UserController extends Controller
 
     public function list()
     {
-        $users = User::all();
+        $users = User::with('bpw')->get();
+        // dd($users);
         return view('users/list_userAdmin', compact('users'));
     }
 
@@ -42,7 +43,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         User::create([
-            'id_user' => auth()->id(),
+            'id_user' => Auth::user()->id_user,
             'username' => request('username'),
             'password' => request('password'),
             'nm_user' => request('nm_user'),
@@ -55,6 +56,7 @@ class UserController extends Controller
             'level' => request('level'),
             'status' => request('status'),
         ]);
+        return redirect('/list_userAdmin');
     }
 
     /**
@@ -78,7 +80,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = Users::find($id);
-        return view ('users/edit_userAdmin', compact('user'));
+        return view('users/edit_userAdmin', compact('user'));
     }
 
     public function editProsesAdmin (Request $request, $id)

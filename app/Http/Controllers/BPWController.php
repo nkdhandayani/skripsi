@@ -60,7 +60,7 @@ class BPWController extends Controller
     {
         BPW::create([
             'nm_bpw' => request('nm_bpw'),
-            'id_user' => auth()->id(),
+            'id_user' => Auth::user()->id_user,
             'username' => request('username'),
             'password' => request('password'),
             'email' => request('email'),

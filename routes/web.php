@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::post('/postlogin', 'App\Http\Controllers\AuthController@postlogin')->middleware('LevelUser');
+	Route::post('/postlogin', 'App\Http\Controllers\AuthController@postlogin');
 	
 
 	// Route user oleh Administrator
@@ -125,7 +125,7 @@ Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
 Route::resource('tdup', 'App\Http\Controllers\TDUPController');
 Route::resource('izin', 'App\Http\Controllers\IzinController');
 Route::resource('lku', 'App\Http\Controllers\LKUController');
-Route::resource('users', 'App\Http\Controllers\UsersController');
+Route::resource('users', 'App\Http\Controllers\UserController');
 
 
 

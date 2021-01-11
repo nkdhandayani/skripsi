@@ -84,7 +84,7 @@
 		</div>
         <div class="form-group">
 		   	<label for="form_nm_user">Nama Pengguna</label>
-			<input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw">
+			<input name="nm_user" type="text" class="form-control" id="input_nm_user">
 		</div>
 		<div class="form-row">
 		    <div class="form-group col-md-6" style="padding: 0; padding-right: 10px">

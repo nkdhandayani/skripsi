@@ -30,4 +30,9 @@ class BPW extends Model
         'foto_bpw',
         'status',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id_user', 'id_user');
+    }
 }

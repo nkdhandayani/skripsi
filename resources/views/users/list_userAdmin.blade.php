@@ -72,7 +72,7 @@
     <div class="box">
       <div class="box-body pad table-responsive" style="width: 150px">
         <td>
-          <a href="{{url('users/tambah_userAdmin')}}"><button type="button" class="btn btn-block btn-primary">Tambah Pengguna</button></a>
+          <a href="{{url('tambah_userAdmin')}}"><button type="button" class="btn btn-block btn-primary">Tambah Pengguna</button></a>
         </td>
       </div>
       <div class="box-body">
@@ -134,7 +134,7 @@
                 </td>
                 <td style="text-align: center;">
                   <a href="{{ url ('users/detail_userAdmin', $users ->id_user) }}" class="btn btn-primary">View</a>
-                  <a href="{{ url ('users/edit_userAdmin', $users -> id_user) }}" class="btn btn-primary">Edit</a>
+                  <a href="{{ url ('edit_userAdmin', $users -> id_user) }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
                 @php

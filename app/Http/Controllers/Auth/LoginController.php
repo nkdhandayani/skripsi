@@ -22,7 +22,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-        public function postlogin(Request $request)
+    public function postlogin(Request $request)
     {
         if (Auth::attempt($request->only('username', 'password'))) {
             return redirect('/dashboard_admin');
