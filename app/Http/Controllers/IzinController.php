@@ -22,6 +22,19 @@ class IzinController extends Controller
     {
         return view('izin.tambah_izinBPW');
     }
+    public function indexDashAdmin()
+    {
+        return view('layout.dashboard_admin');
+    }
+    public function indexDashStaf()
+    {
+        return view('layout.dashboard_staf');
+    }
+    public function indexDashBPW()
+    {
+        return view('layout.dashboard_bpw');
+    }
+
 
     public function listBPW()
     {

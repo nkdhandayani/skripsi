@@ -1,5 +1,6 @@
+
 @extends('layout.blank')
-@section('title', 'Detail Biro Perjalanan Wisata | Admin')
+@section('title', 'Detail Biro Perjalanan Wisata | BPW')
 @section('topbaraccount')
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -35,27 +36,26 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="/dashboard_admin">
-        <i class="fa fa-home"></i><span> Dashboard</span>
+      <a href="/dashboard_bpw">
+        <i class="fa fa-dashboard"></i><span> Dashboard</span>
       </a>
     </li>
-    <li>
-      <a href="/list_userAdmin">
-        <i class="fa fa-user"></i><span> Kelola Pengguna</span>
+    <li class="active">
+      <a href="/list_bpwBPW">
+        <i class="fa fa-list-alt"></i><span> Biro Perjalanan Wisata</span>
       </a>
     </li>
-    <li class="active treeview">
+    <li class="treeview">
       <a href="#">
-      <i class="fa fa-edit"></i><span> Kelola BPW</span>
+      <i class="fa fa-edit"></i><span> Kelola Data</span>
         <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_tdupBPW"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinBPW"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li><a href="/list_lkuBPW"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -68,10 +68,9 @@
 @section('content-title', 'Detail Biro Perjalanan Wisata')
 
 @section('breadcrumb')
-  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
-  <li> Kelola BPW</li>
-  <li><a href="/list_bpwAdmin"> Data BPW</a></li>
-  <li class="active"> Detail BPW</li>
+  <li><a href="/dashboard_bpw"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li> Biro Perjalanan Wisata</li>
+  <li class="active"> Detail Biro Perjalanan Wisata</li>
 @endsection
 
 @section('content')
@@ -88,16 +87,6 @@
               <td>Nama Biro</td>
               <td>:</td>
               <td>{{$detailBPWAdmin->nm_bpw}}</td>
-            </tr>
-            <tr>
-              <td>Username</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->username}}</td>
-            </tr>
-            <tr>
-              <td>Password</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->password}}</td>
             </tr>
             <tr>
               <td>Email</td>
@@ -174,7 +163,7 @@
 
         <!-- /.box-body -->
         <div class="box-footer">
-          <a href="/list_bpwAdmin" class="btn btn-primary">Kembali</a>
+          <a href="/list_bpwBPW" class="btn btn-primary">Kembali</a>
         </div>
 
       </div>

@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_admin')}}">
+      <a href="/dashboard_admin">
         <i class="fa fa-home"></i><span> Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="{{url('list_userAdmin')}}">
+      <a href="/list_userAdmin">
         <i class="fa fa-user"></i><span> Kelola Pengguna</span>
       </a>
     </li>
@@ -44,10 +52,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_bpwAdmin')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="{{url('list_tdupAdmin')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li class="active"><a href="{{url('list_izinAdmin')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="{{url('list_lkuAdmin')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li class="active"><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -76,27 +84,25 @@
           <thead>
             <th>No.</th>
             <th>No. Izin Operasional</th>
-            <th>Tanggal</th>
             <th>Masa Berlaku</th>
             <th>File Izin Operasional</th>
             <th>Status Verifikasi</th>
             <th>Status</th>
-            <th>Aksi</th>
+            <th style="text-align: center;">Aksi</th>
           </thead>
           <tbody>
             @php
               $i=1;
             @endphp
-            @foreach ($izinz as $izin)
+            @foreach ($izins as $izin)
               <tr>
                 <td>{{ $i }}</td>
                 <td>{{ $izin->no_izin }}</td>
-                <td>{{ $izin->tanggal }}</td>
                 <td>{{ $izin->ms_berlaku }}</td>
                 <td>{{ $izin->file_izin }}</td>
                 <td>{{ $izin->sts_verifikasi }}</td>
                 <td>{{ $izin->status }}</td>
-                <td>
+                <td style="text-align: center;">
                   <a href="{{url('detail_izinAdmin', $izin -> id_izin)}}" class="btn btn-primary">View</a>
                 </td>
               </tr>

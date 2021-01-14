@@ -1,5 +1,5 @@
 @extends('layout.blank')
-@section('title', 'Edit Izin Operasional | Staf Jasa')
+@section('title', 'Edit Data Izin Operasional | Staf')
 @section('topbaraccount')
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,7 +35,7 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_staf')}}">
+      <a href="/dashboard_staf">
         <i class="fa fa-home"></i><span> Dashboard</span>
       </a>
     </li>
@@ -39,10 +47,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_bpwStaf')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="{{url('list_tdupStaf')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li class="active"><a href="{{url('list_izinStaf')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="{{url('list_lkuStaf')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwStaf"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li><a href="/list_tdupStaf"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li class="active"><a href="/list_izinStaf"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuStaf"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -55,9 +63,9 @@
 @section('content-title', 'Edit Data Izin Operasional')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_staf')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+  <li><a href="/dashboard_staf"><i class="fa fa-dashboard"></i> Dashboard</a></li>
   <li> Kelola BPW</li>
-  <li><a href=""> Data BPW</li>
+  <li><a href="list_bpwStaf"> Data BPW</li>
   <li class="active"> Edit Data Izin Operasional</li>
 @endsection
 
@@ -74,12 +82,17 @@
   <form role="form">
   <div class="box-body">
 
+  <div>
+    <a href="/list_izinStaf" class="btn btn-primary" style="float: right;">Kembali</a>
+  </div>
+  <div style="clear: both;"></div>
   <!-- <div class="form-group col-md-6">
       <label for="form_nm_bpw">Nama BPW</label>
       <input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw">
     </div> -->
+
   <div class="form-group col-md-6">
-        <label for="inputNo_Izin">Nomor Izin Operasional</label>
+        <label for="inputNo_Izin">No. Izin Operasional</label>
         <input name="no_izin" type="text" class="form-control">
     </div>
     <div class="form-row col-md-6">
@@ -96,12 +109,16 @@
       <label for="file_izin">File Izin Operasional</label>
       <input name="file_izin" type="file" class="form-control-file">
   </div>
+  <!-- <div class="form-group col-md-6">
+        <label for="input_tanggal_tambah">Tanggal Ditambahkan</label>
+        <input name="created_at" type="date" class="form-control">
+  </div> -->
   <div class="form-group col-md-6">
       <label for="status">Status Verifikasi</label>
       <select name="sts_verifikasi" class="form-control">
       <option selected>-- Pilih Status Verifikasi --</option>
-        <option value="1">Diterima</option>
-        <option value="0">Diperbaiki</option>
+        <option value="1">Disetujui</option>
+        <option value="0">Belum Disetujui</option>
       </select>
   </div>
   <div class="form-group col-md-6">
@@ -124,22 +141,15 @@
         <option value="0">Tidak Aktif</option>
       </select>
   </div>
-  <!-- <div class="form-group col-md-6">
-        <label for="input_tanggal_tambah">Tanggal Ditambahkan</label>
-        <input name="created_at" type="date" class="form-control">
-  </div> -->
-  <!-- <div class="form-group col-md-6">
-        <label for="input_tanggal_tambah">Tanggal Disuntuing</label>
-        <input name="updated_at" type="date" class="form-control">
-  </div> -->
   
-  <div>
-  <button type="submit" class="btn btn-primary" style="margin-top: 10px">Simpan Izin Operasional</button>
-  </div>
+<div>
+  <button type="submit" class="btn btn-primary">Simpan Izin Operasional</button>
+</div>
 
 </div>
 </form>
 </div>
+
 @endsection
 
 @section('content-footer')

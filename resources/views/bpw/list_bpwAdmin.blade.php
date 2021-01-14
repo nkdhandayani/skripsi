@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_admin')}}">
+      <a href="/dashboard_admin">
         <i class="fa fa-home"></i><span> Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="{{url('list_userAdmin')}}">
+      <a href="/list_userAdmin">
         <i class="fa fa-user"></i><span> Kelola Pengguna</span>
       </a>
     </li>
@@ -44,10 +52,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="{{url('list_bpwAdmin')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="{{url('list_tdupAdmin')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="{{url('list_izinAdmin')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="{{url('list_lkuAdmin')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li class="active"><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -60,7 +68,7 @@
 @section('content-title', 'Data Biro Perjalanan Wisata')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_staf')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola BPW</li>
   <li class="active"> Data BPW</li>
 @endsection
@@ -70,9 +78,9 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="box">
-      <div class="box-body pad table-responsive" style="width: 150px">
+      <div class="box-body pad table-responsive">
         <td>
-          <a href="{{url('tambah_bpwAdmin')}}"><button type="button" class="btn btn-block btn-primary">Tambah Biro</button></a>
+          <a href="/tambah_bpwAdmin"><button type="button" class="btn btn-primary">Tambah Biro</button></a>
         </td>
       </div>
             

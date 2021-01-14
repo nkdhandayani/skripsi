@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn /ault btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_admin')}}">
+      <a href="/dashboard_admin">
         <i class="fa fa-home"></i><span> Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="{{url('list_userAdmin')}}">
+      <a href="/list_userAdmin">
         <i class="fa fa-user"></i><span> Kelola Pengguna</span>
       </a>
     </li>
@@ -44,15 +52,13 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_bpwAdmin')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="{{url('list_tdupAdmin')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="{{url('list_izinAdmin')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li class="active"><a href="{{url('list_lkuAdmin')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li class="active"><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
-    <li class="header"></li>
-        <li><a href="{{url('/logout')}}"><i class="fa fa-circle-o text-red"></i> <span>Logout</span></a></li>
-</ul>
+    </ul>
 </section>
 
 <!-- sidebar: style can be found in sidebar.less -->
@@ -62,7 +68,7 @@
 @section('content-title', 'Data LKU')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_admin')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola BPW</li>
   <li class="active"> Data LKU</li>
 @endsection
@@ -84,13 +90,13 @@
               <th>File LKU</th>
               <th>Status Verifikasi</th>
               <th>Status</th>
-              <th>Aksi</th>
+              <th style="text-align: center;">Aksi</th>
             </thead>
           <tbody>
             @php
               $i=1;
             @endphp
-            @foreach ($izinz as $izin)
+            @foreach ($lkus as $lku)
               <tr>
                 <td>{{ $i }}</td>
                 <td>{{ $lku->nm_bpw }}</td>
@@ -100,7 +106,7 @@
                 <td>{{ $lku->file_lku }}</td>
                 <td>{{ $lku->sts_verifikasi }}</td>
                 <td>{{ $lku->status }}</td>
-                <td>
+                <td style="text-align: center;">
                   <a href="{{url('detail_lku', $lku -> id_lku)}}" class="btn btn-primary">View</a>
                 </td>
               </tr>

@@ -1,5 +1,5 @@
 @extends('layout.blank')
-@section('title', 'Detail Biro Perjalanan Wisata | Admin')
+@section('title', 'Detail Biro Perjalanan Wisata | Staf')
 @section('topbaraccount')
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -35,13 +35,8 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="/dashboard_admin">
-        <i class="fa fa-home"></i><span> Dashboard</span>
-      </a>
-    </li>
-    <li>
-      <a href="/list_userAdmin">
-        <i class="fa fa-user"></i><span> Kelola Pengguna</span>
+      <a href="/dashboard_staf">
+        <i class="fa fa-dashboard"></i><span> Dashboard</span>
       </a>
     </li>
     <li class="active treeview">
@@ -52,10 +47,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li class="active"><a href="/list_bpwStaf"><i class="fa fa-circle-o"></i><span> Data BPW</span></a></li>
+        <li><a href="/list_tdupStaf"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinStaf"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li><a href="/list_lkuStaf"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -65,18 +60,17 @@
 </aside>
 @endsection
 
-@section('content-title', 'Detail Biro Perjalanan Wisata')
+@section('content-title', 'Data Biro Perjalanan Wisata')
 
 @section('breadcrumb')
-  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_staf"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola BPW</li>
-  <li><a href="/list_bpwAdmin"> Data BPW</a></li>
-  <li class="active"> Detail BPW</li>
+  <li class="active"> Data BPW</li>
 @endsection
 
 @section('content')
 <section class="content" style="padding-top: 0;">
-	<div class="box box-primary">
+  <div class="box box-primary">
         <div class="box-body">
           <table class="table">
             <tr>
@@ -88,16 +82,6 @@
               <td>Nama Biro</td>
               <td>:</td>
               <td>{{$detailBPWAdmin->nm_bpw}}</td>
-            </tr>
-            <tr>
-              <td>Username</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->username}}</td>
-            </tr>
-            <tr>
-              <td>Password</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->password}}</td>
             </tr>
             <tr>
               <td>Email</td>
@@ -174,13 +158,13 @@
 
         <!-- /.box-body -->
         <div class="box-footer">
-          <a href="/list_bpwAdmin" class="btn btn-primary">Kembali</a>
+          <a href="/list_bpwStaf" class="btn btn-primary">Kembali</a>
         </div>
 
       </div>
-				
+        
  
-</section>	
+</section>  
 @endsection
 
 @section('content-footer')

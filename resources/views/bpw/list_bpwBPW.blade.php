@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_bpw')}}">
+      <a href="/dashboard_bpw">
         <i class="fa fa-dashboard"></i><span> Dashboard</span>
       </a>
     </li>
     <li class="active">
-      <a href="{{url('list_bpwBPW')}}">
+      <a href="/list_bpwBPW">
         <i class="fa fa-list-alt"></i><span> Biro Perjalanan Wisata</span>
       </a>
     </li>
@@ -44,9 +52,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_tdupBPW')}}"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
-        <li><a href="{{url('list_izinBPW')}}"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
-        <li><a href="{{url('list_lkuBPW')}}"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
+        <li><a href="/list_tdupBPW"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinBPW"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li><a href="/list_lkuBPW"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -59,7 +67,7 @@
 @section('content-title', 'Data Biro Perjalanan Wisata')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_bpw')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_bpw"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li class="active"> Biro Perjalanan Wisata</li>
 @endsection
 

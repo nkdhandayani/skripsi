@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Dashboard | Staf Jasa')
+@section('title', 'Dashboard | Staf')
 @section('topbaraccount')
 @section('sidemenu')
 <!-- Left side column. contains the logo and sidebar -->
@@ -8,12 +8,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li class="treeview">
-        <a href="{{url('dashboard_bpw')}}">
+        <a href="/dashboard_bpw">
             <i class="fa fa-dashboard active"></i><span> Dashboard</span>
         </a>
     </li>
     <li class="treeview">
-      <a href="{{url('list_bpwBPW')}}">
+      <a href="/list_bpwBPW">
         <i class="fa fa-list-alt"></i><span> Biro Perjalanan Wisata</span>
       </a>
     </li>
@@ -25,9 +25,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_tdupBPW')}}"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
-        <li><a href="{{url('list_izinBPW')}}"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
-        <li><a href="{{url('list_lkuBPW')}}"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
+        <li><a href="/list_tdupBPW"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinBPW"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li><a href="/list_lkuBPW"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -40,7 +40,7 @@
 @section('content-title', 'Hello,')
 
 @section('breadcrumb')
-	<li><a href="{{url('layout/dashboard_staf')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+	<li><a href="/dashboard_staf"><i class="fa fa-dashboard"></i> Home</a></li>
 	<li class="active">Dashboard</li>
 @endsection
 

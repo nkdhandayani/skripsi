@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_bpw')}}">
+      <a href="/dashboard_bpw">
         <i class="fa fa-dashboard"></i><span> Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="{{url('list_bpwBPW')}}">
+      <a href="/list_bpwBPW">
         <i class="fa fa-list-alt"></i><span> Biro Perjalanan Wisata</span>
       </a>
     </li>
@@ -44,9 +52,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_tdupBPW')}}"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
-        <li class="active"><a href="{{url('list_izinBPW')}}"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
-        <li><a href="{{url('list_lkuBPW')}}"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
+        <li><a href="/list_tdupBPW"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinBPW"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li class="active"><a href="/list_lkuBPW"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -59,7 +67,7 @@
 @section('content-title', 'Tambah Data Izin Operasional')
 
 @section('breadcrumb')
-	<li><a href="{{url('dashboard_bpw')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+	<li><a href="/dashboard_bpw"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 	<li> Kelola Data</li>
 	<li> Data LKU</li>
 	<li class="active"> Tambah Data LKU</li>
@@ -77,7 +85,11 @@
             <!-- form start -->
             <form role="form">
             <div class="box-body">
-
+  
+  <div>
+    <a href="/list_lkuBPW" class="btn btn-primary" style="float: right;">Kembali</a>
+  </div>
+  <div style="clear: both;"></div>
 	<!-- <div class="form-group col-md-6">
     	<label for="form_nm_bpw">Nama BPW</label>
    		<input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw">
@@ -148,7 +160,7 @@
 	</div>
 
 	<div>
-	<button type="submit" class="btn btn-primary" style="margin-left: 15px; margin-top: 10px">Tambah Data LKU</button>
+	<button type="submit" class="btn btn-primary">Tambah Data LKU</button>
 	</div>
 </form>
 

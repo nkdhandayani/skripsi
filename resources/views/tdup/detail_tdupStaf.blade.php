@@ -1,5 +1,5 @@
 @extends('layout.blank')
-@section('title', 'Detail Biro Perjalanan Wisata | Admin')
+@section('title', 'Detail TDUP | Staf')
 @section('topbaraccount')
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -35,13 +35,8 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="/dashboard_admin">
+      <a href="/dashboard_staf">
         <i class="fa fa-home"></i><span> Dashboard</span>
-      </a>
-    </li>
-    <li>
-      <a href="/list_userAdmin">
-        <i class="fa fa-user"></i><span> Kelola Pengguna</span>
       </a>
     </li>
     <li class="active treeview">
@@ -52,10 +47,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwStaf"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li class="active"><a href="/list_tdupStaf"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li><a href="/list_izinStaf"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuStaf"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -65,99 +60,93 @@
 </aside>
 @endsection
 
-@section('content-title', 'Detail Biro Perjalanan Wisata')
+@section('content-title', 'Detail Data TDUP')
 
 @section('breadcrumb')
-  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_staf"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola BPW</li>
-  <li><a href="/list_bpwAdmin"> Data BPW</a></li>
-  <li class="active"> Detail BPW</li>
+  <li> Data TDUP</li>
+  <li class="active"> Detail Data TDUP</li>
 @endsection
 
 @section('content')
 <section class="content" style="padding-top: 0;">
-	<div class="box box-primary">
+  <div class="box box-primary">
         <div class="box-body">
           <table class="table">
-            <tr>
-              <td width="200px">Foto</td>
+            <!-- <tr>
+              <td width="200px">Nama Biro</td>
               <td width="5px">:</td>
-              <td>{{$detailBPWAdmin->foto_bpw}}</td>
-            </tr>
+              <td>{{$detailBPWStaf->nm_bpw}}</td>
+            </tr> -->
             <tr> 
-              <td>Nama Biro</td>
+              <td>No. TDUP</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->nm_bpw}}</td>
+              <td>{{$detailTDUPStaf->no_izin}}</td>
             </tr>
             <tr>
-              <td>Username</td>
+              <td>Tanggal TDUP</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->username}}</td>
+              <td>{{$detailTDUPStaf->tanggal}}</td>
             </tr>
             <tr>
-              <td>Password</td>
+              <td>Masa Berlaku TDUP</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->password}}</td>
+              <td>{{$detailTDUPStaf->ms_berlaku}}</td>
             </tr>
             <tr>
-              <td>Email</td>
+              <td>File TDUP</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->email}}</td>
+              <td>{{$detailTDUPStaf->file_izin}}</td>
             </tr>
             <tr>
-              <td>Alamat</td>
+              <td>Tanggal Ditambahkan</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->alamat}}</td>
+              <td>{{$detailTDUPStaf->created_at}}</td>
             </tr>
             <tr>
-              <td>Kabupaten</td>
+              <td>Status Verifikasi</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->kabupaten}}</td>
+              <td>                
+                <?php if($detailTDUPStaf->status == 0)
+                    {
+                       echo "Tidak Disetujui";
+                    }
+                      elseif($detailTDUPStaf->status == 1)
+                    {
+                        echo "Disetujui";
+                    }
+                      else
+                    {
+                        echo "-";
+                    }                          
+                    ?>
+              </td>
             </tr>
             <tr>
-              <td>No. Telp</td>
+              <td>Keterangan</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->no_telp}}</td>
+              <td>{{$detailTDUPStaf->keterangan}}</td>
             </tr>
             <tr>
-              <td>No. Fax</td>
+              <td>Tanggal Verifikasi</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->no_fax}}</td>
+              <td>{{$detailTDUPStaf->tgl_verifikasi}}</td>
             </tr>
-            <tr>
-              <td>Nama PIC</td>
+            <!-- <tr>
+              <td>Diverifikasi oleh:</td>
               <td>:</td>
-              <td>{{$detailBPWAdmin->nm_pic}}</td>
-            </tr>
-            <tr>
-              <td>Nama Pimpinan</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->nm_pimpinan}}</td>
-            </tr>
-            <tr>
-              <td>Jenis BPW</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->jns_bpw}}</td>
-            </tr>
-            <tr>
-              <td>Status Kantor</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->sts_kantor}}</td>
-            </tr>
-            <tr>
-              <td>NIB</td>
-              <td>:</td>
-              <td>{{$detailBPWAdmin->nib}}</td>
-            </tr>
+              <td>{{$detailUserStaf->nm_user}}</td>
+            </tr> -->
             <tr>
               <td>Status</td>
               <td>:</td>
               <td>
-                <?php if($detailBPWAdmin->status == 0)
+                <?php if($detailTDUPStaf->status == 0)
                      {
                         echo "Tidak Aktif";
                      }
-                      elseif($detailBPWAdmin->status == 1)
+                      elseif($detailTDUPStaf->status == 1)
                     {
                         echo "Aktif";
                     }
@@ -174,13 +163,13 @@
 
         <!-- /.box-body -->
         <div class="box-footer">
-          <a href="/list_bpwAdmin" class="btn btn-primary">Kembali</a>
+          <a href="/list_tdupStaf" class="btn btn-primary">Kembali</a>
         </div>
 
       </div>
-				
+        
  
-</section>	
+</section>  
 @endsection
 
 @section('content-footer')

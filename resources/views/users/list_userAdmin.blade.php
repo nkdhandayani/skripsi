@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-        <a href="{{url('/dashboard_admin')}}">
+        <a href="//dashboard_admin">
             <i class="fa fa-home"></i><span> Dashboard</span>
         </a>
     </li>
     <li class="active">
-        <a href="{{url('users/list_userAdmin')}}">
+        <a href="list_userAdmin">
             <i class="fa fa-user"></i><span> Kelola Pengguna</span>
         </a>
     </li>
@@ -44,10 +52,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_bpwAdmin')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li><a href="{{url('list_tdupAdmin')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="{{url('list_izinAdmin')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="{{url('list_lkuAdmin')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -60,9 +68,8 @@
 @section('content-title', 'Data Pengguna')
 
 @section('breadcrumb')
-  <li><a href="{{url('layout/dashboard_admin')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
-  <li> Kelola Pengguna</li>
-  <li class="active"> Data Pengguna</li>
+  <li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li class="active"> Kelola Pengguna</li>
 @endsection
 
 @section('content')
@@ -72,7 +79,7 @@
     <div class="box">
       <div class="box-body pad table-responsive" style="width: 150px">
         <td>
-          <a href="{{url('tambah_userAdmin')}}"><button type="button" class="btn btn-block btn-primary">Tambah Pengguna</button></a>
+          <a href="/tambah_userAdmin"><button type="button" class="btn btn-primary">Tambah Pengguna</button></a>
         </td>
       </div>
       <div class="box-body">
@@ -84,7 +91,7 @@
             <th>Email</th>
             <th>No. Telp</th>
             <th>Level</th>
-            <th>Status</th>
+            <th >Status</th>
             <th style="text-align: center;">Aksi</th>
           </thead>
         <tbody>
@@ -133,7 +140,7 @@
                 ?>
                 </td>
                 <td style="text-align: center;">
-                  <a href="{{ url ('users/detail_userAdmin', $users ->id_user) }}" class="btn btn-primary">View</a>
+                  <a href="/detail_userAdmin/detail/{{ $users->id_user }}" class="btn btn-primary">View</a>
                   <a href="/edit_userAdmin/edit/{{ $users->id_user }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>

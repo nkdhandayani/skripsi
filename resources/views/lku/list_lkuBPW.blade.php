@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_bpw')}}">
+      <a href="/dashboard_bpw">
         <i class="fa fa-dashboard"></i><span> Dashboard</span>
       </a>
     </li>
     <li>
-      <a href="{{url('list_bpwBPW')}}">
+      <a href="/list_bpwBPW">
         <i class="fa fa-list-alt"></i><span> Biro Perjalanan Wisata</span>
       </a>
     </li>
@@ -44,9 +52,9 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_tdupBPW')}}"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
-        <li class="active"><a href="{{url('list_izinBPW')}}"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
-        <li><a href="{{url('list_lkuBPW')}}"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
+        <li><a href="/list_tdupBPW"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+        <li><a href="/list_izinBPW"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+        <li class="active"><a href="/list_lkuBPW"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
       </ul>
     </li>
 </ul>
@@ -59,7 +67,7 @@
 @section('content-title', 'Data LKU')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_bpw')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_bpw"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola Data</li>
   <li class="active"> Data LKU</li>
 @endsection
@@ -71,7 +79,7 @@
      <div class="box">
         <div class="box-body pad table-responsive" style="width: 150px">
           <td>
-            <a href="{{url('lku/tambah_lkuBPW')}}"><button type="button" class="btn btn-block btn-primary">Tambah LKU</button></a>
+            <a href="/tambah_lkuBPW"><button type="button" class="btn btn-block btn-primary">Tambah LKU</button></a>
           </td>
         </div>
               
@@ -86,7 +94,7 @@
               <th>File LKU</th>
               <th>Status Verifikasi</th>
               <th>Status</th>
-              <th>Aksi</th>
+              <th style="text-align: center;">Aksi</th>
             </thead>
           <tbody>
             @php
@@ -102,7 +110,7 @@
                 <td>{{ $lku->file_lku }}</td>
                 <td>{{ $lku->sts_verifikasi }}</td>
                 <td>{{ $lku->status }}</td>
-                <td>
+                <td style="text-align: center;">
                   <a href="{{url('detail_lku', $lku -> id_lku)}}" class="btn btn-primary">View</a>
                   <a href="/edit_lkuStaf/edit/{{ $lku->id_lku }}" class="btn btn-primary">Edit</a>
                 </td>

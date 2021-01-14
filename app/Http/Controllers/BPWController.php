@@ -22,6 +22,23 @@ class BPWController extends Controller
         return view('bpw.tambah_bpwAdmin');
     }
 
+     public function indexDashAdmin()
+    {
+        return view('layout.dashboard_admin');
+    }
+    public function indexDashStaf()
+    {
+        return view('layout.dashboard_staf');
+    }
+    public function indexDashKepala()
+    {
+        return view('layout.dashboard_kepala');
+    }
+    public function indexDashBPW()
+    {
+        return view('layout.dashboard_bpw');
+    }
+
     public function listBPW()
     {
         $bpws = BPW::all();

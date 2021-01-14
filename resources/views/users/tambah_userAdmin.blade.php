@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,12 +35,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li class="treeview">
-        <a href="{{url('layout/dashboard_admin')}}">
+        <a href="/dashboard_admin">
             <i class="fa fa-home"></i><span> Dashboard</span>
         </a>
     </li>
     <li class="treeview">
-        <a href="{{url('users/list_userAdmin')}}">
+        <a href="/list_userAdmin">
             <i class="fa fa-home active"></i><span> Kelola Pengguna</span>
         </a>
     </li>
@@ -44,10 +52,10 @@
     		</span>
     	</a>
     	<ul class="treeview-menu">
-    		<li><a href="{{url('bpw/list_bpwAdmin')}}"><i class="fa fa-circle-o"></i><span> Data BPW</span></a></li>
-    		<li><a href="{{url('tdup/list_tdupAdmin')}}"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
-    		<li><a href="{{url('izin/list_izinAdmin')}}"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
-    		<li><a href="{{url('lku/list_lkuAdmin')}}"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
+    		<li><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i><span> Data BPW</span></a></li>
+    		<li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i><span> Data TDUP</span></a></li>
+    		<li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i><span> Data Izin Operasional</span></a></li>
+    		<li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i><span> Data LKU</span></a></li>
     	</ul>
     </li>
 </ul>
@@ -60,7 +68,7 @@
 @section('content-title', 'Tambah Data Pengguna')
 
 @section('breadcrumb')
-	<li><a href="{{url('layout/dashboard_admin')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+	<li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
 	<li> Kelola Pengguna</li>
 	<li class="active"> Tambah Data Pengguna</li>
 @endsection
@@ -78,6 +86,10 @@
     <form role="form">
     <div class="box-body">
 
+    	<div>
+    		<a href="/list_userAdmin" class="btn btn-primary" style="float: right;">Kembali</a>
+  		</div>
+  		<div style="clear: both;"></div>
         <div class="form-group">
 		 	<label for="form_foto_user">Foto Pengguna</label>
 		   	<input name="foto_user" type="file" class="form-control-file" id="input_foto_user">
@@ -115,8 +127,8 @@
 		    <label for="form_jns_kelamin">Jenis Kelamin</label>
 			    <select name="jns_kelamin" class="form-control" id="input_jns_kelamin">
 			    	<option selected>-- Pilih Jenis Kelamin --</option>
-				    <option value="1">Perempuan</option>
-				    <option value="0">Laki-laki</option>
+				    <option value="Laki-laki">Laki-laki</option>
+				    <option value="Perempuan">Perempuan</option>
 			    </select>
 		</div>
 		</div>
@@ -140,7 +152,7 @@
 		</div>
 
 		<div>
-			<button type="submit" class="btn btn-primary" style="margin-top: 10px">Tambah Data Pengguna</button>
+			<button type="submit" class="btn btn-primary">Tambah Data Pengguna</button>
 		</div>
 	
 	</div>

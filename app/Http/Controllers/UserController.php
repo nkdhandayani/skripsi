@@ -22,6 +22,11 @@ class UserController extends Controller
         return view('users.tambah_userAdmin');
     }
 
+    public function indexDashAdmin()
+    {
+        return view('layout.dashboard_admin');
+    }
+
     public function list()
     {
         $users = User::with('bpw')->get();
@@ -110,6 +115,12 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function detailUserAdmin($id)
+    {
+        $detailUserAdmin = User::find($id);
+        return view ('users/detail_userAdmin',['detailUserAdmin' => $detailUserAdmin]);
     }
 
     /**

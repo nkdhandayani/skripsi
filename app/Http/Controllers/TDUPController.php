@@ -22,6 +22,19 @@ class TDUPController extends Controller
     {
         return view('tdup.tambah_tdupBPW');
     }
+    public function indexDashAdmin()
+    {
+        return view('layout.dashboard_admin');
+    }
+    public function indexDashStaf()
+    {
+        return view('layout.dashboard_staf');
+    }
+    public function indexDashBPW()
+    {
+        return view('layout.dashboard_bpw');
+    }
+
 
     public function listBPW()
     {

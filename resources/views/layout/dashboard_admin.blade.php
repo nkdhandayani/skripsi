@@ -8,12 +8,12 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li class="active">
-        <a href="{{url('dashboard_admin')}}">
+        <a href="/dashboard_admin">
             <i class="fa fa-home"></i><span> Dashboard</span>
         </a>
     </li>
     <li>
-        <a href="{{url('list_userAdmin')}}">
+        <a href="/list_userAdmin">
             <i class="fa fa-user"></i><span> Kelola Pengguna</span>
         </a>
     </li>
@@ -25,10 +25,10 @@
     		</span>
     	</a>
     	<ul class="treeview-menu">
-    		<li><a href="{{url('list_bpwAdmin')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-    		<li><a href="{{url('list_tdupAdmin')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-    		<li><a href="{{url('list_izinAdmin')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-    		<li><a href="{{url('list_lkuAdmin')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+    		<li><a href="/list_bpwAdmin"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+    		<li><a href="/list_tdupAdmin"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+    		<li><a href="/list_izinAdmin"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+    		<li><a href="/list_lkuAdmin"><i class="fa fa-circle-o"></i> Data LKU</a></li>
     	</ul>
     </li>
 </ul>
@@ -41,7 +41,7 @@
 @section('content-title', 'Hello,')
 
 @section('breadcrumb')
-	<li><a href="{{url('layout/dashboard_admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+	<li><a href="/dashboard_admin"><i class="fa fa-dashboard"></i> Home</a></li>
 	<li class="active">Dashboard</li>
 @endsection
 

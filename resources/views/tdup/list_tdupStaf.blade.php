@@ -1,5 +1,5 @@
 @extends('layout.blank')
-@section('title', 'Data TDUP | Staf Jasa')
+@section('title', 'Data TDUP | Staf')
 @section('topbaraccount')
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -16,6 +16,14 @@
         <small>Member since Nov. 2012</small>
         </p>
     </li>
+    <li class="user-footer">
+      <div class="pull-left">
+        <a href="#" class="btn btn-default btn-flat">Profile</a>
+      </div>
+      <div class="pull-right">
+        <a href="#" class="btn btn-default btn-flat">Log out</a>
+      </div>
+    </li>
     </ul>
 </li>
 @endsection
@@ -27,7 +35,7 @@
 <section class="sidebar">
 <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="{{url('dashboard_staf')}}">
+      <a href="/dashboard_staf">
         <i class="fa fa-home"></i><span> Dashboard</span>
       </a>
     </li>
@@ -39,10 +47,10 @@
         </span>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{url('list_bpwStaf')}}"><i class="fa fa-circle-o"></i> Data BPW</a></li>
-        <li class="active"><a href="{{url('list_tdupStaf')}}"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
-        <li><a href="{{url('list_izinStaf')}}"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
-        <li><a href="{{url('list_lkuStaf')}}"><i class="fa fa-circle-o"></i> Data LKU</a></li>
+        <li><a href="/list_bpwStaf"><i class="fa fa-circle-o"></i> Data BPW</a></li>
+        <li class="active"><a href="/list_tdupStaf"><i class="fa fa-circle-o"></i> Data TDUP</a></li>
+        <li><a href="/list_izinStaf"><i class="fa fa-circle-o"></i> Data Izin Operasional</a></li>
+        <li><a href="/list_lkuStaf"><i class="fa fa-circle-o"></i> Data LKU</a></li>
       </ul>
     </li>
 </ul>
@@ -55,7 +63,7 @@
 @section('content-title', 'Data TDUP')
 
 @section('breadcrumb')
-  <li><a href="{{url('dashboard_staf')}}"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
+  <li><a href="/dashboard_staf"><i class="fa fa-dashboard"></i><span> Dashboard</span></a></li>
   <li> Kelola BPW</li>
   <li class="active"> Data TDUP</li>
 @endsection
@@ -71,12 +79,11 @@
           <thead>
             <th>No.</th>
             <th>No. TDUP</th>
-            <th>Tanggal</th>
             <th>Masa Berlaku</th>
             <th>File TDUP</th>
             <th>Status Verifikasi</th>
             <th>Status</th>
-            <th>Aksi</th>
+            <th style="text-align: center;">Aksi</th>
           </thead>
           <tbody>
             @php
@@ -86,12 +93,11 @@
               <tr>
                 <td>{{ $i }}</td>
                 <td>{{ $tdup->no_tdup }}</td>
-                <td>{{ $tdup->tanggal }}</td>
                 <td>{{ $tdup->ms_berlaku }}</td>
                 <td>{{ $tdup->file_tdup }}</td>
                 <td>{{ $tdup->sts_verifikasi }}</td>
                 <td>{{ $tdup->status }}</td>
-                <td>
+                <td style="text-align: center;">
                   <a href="{{url('detail_tdup', $tdup -> id_tdup)}}" class="btn btn-primary">View</a>
                   <a href="/edit_izinStaf/edit/{{ $bpw->id_bpw }}" class="btn btn-primary">Edit</a>       
                 </td>
