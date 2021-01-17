@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'user',
         'passwords' => 'users',
     ],
 
@@ -36,9 +36,14 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'user' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+
+        'bpw' => [
+            'driver' => 'session',
+            'provider' => 'bpw',
         ],
 
         'api' => [
@@ -69,6 +74,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'bpw' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\BPW::class,
         ],
 
         // 'users' => [

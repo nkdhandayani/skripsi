@@ -40,6 +40,14 @@
                                         <label for="inputPassword">Password</label>
                                     </div>
 
+                                    <div class="form-label-group">
+                                        <select class="form-control" name="login_as" id="inputLoginAs" style="border-radius: 2rem;" required>
+                                            <option value="">-- Login As --</option>
+                                            <option value="jasa_pariwisata">Jasa Pariwisata</option>
+                                            <option value="biro_perjalanan_wisata">Biro Perjalanan Wisata</option>
+                                        </select>
+                                    </div>
+
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
