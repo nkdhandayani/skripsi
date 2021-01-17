@@ -44,7 +44,8 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('user')->logout();
+        Auth::guard('bpw')->logout();
         return redirect('/');
     }
 }
