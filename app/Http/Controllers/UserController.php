@@ -49,7 +49,7 @@ class UserController extends Controller
     {
         User::create([
             'username' => request('username'),
-            'password' => request('password'),
+            'password' => Hash::make(request('password')),
             'nm_user' => request('nm_user'),
             'nik' => request('nik'),
             'email' => request('email'),
@@ -91,7 +91,7 @@ class UserController extends Controller
         DB::table('users')->where('id_user', $id)
             -> update([
                 'username' => request('username'),
-                'password' => request('password'),
+                'password' => Hash::make(request('password')),
                 'nm_user' => request('nm_user'),
                 'nik' => request('nik'),
                 'email' => request('email'),
