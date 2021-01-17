@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 
+	Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 	Route::post('/postlogin', 'App\Http\Controllers\AuthController@postlogin');
 	
 
