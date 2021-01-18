@@ -75,10 +75,10 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{ route('lku.store') }}" method="post">
+<form action="{{ route('tdup.store') }}" method="post">
   {{csrf_field()}}
 
-  <section class="content">
+  <section class="content" style="padding-top: 0;">
       <div class="box">
 
             <!-- /.box-header -->
@@ -87,55 +87,28 @@
             <div class="box-body">
 
   <div>
-    <a href="/list_lkuBPW" class="btn btn-primary" style="float: right;">Kembali</a>
+    <a href="/list_tdupBPW" class="btn btn-primary" style="float: right;">Kembali</a>
   </div>
   <div style="clear: both;"></div>
-	<!-- <div class="form-group col-md-6">
-    	<label for="form_nm_bpw">Nama BPW</label>
-   		<input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw">
-  	</div> -->
-	<div class="form-group col-md-6">
+	<div class="form-group">
       	<label for="inputNo_TDUP">Nomor TDUP</label>
       	<input name="no_tdup" type="text" class="form-control">
     </div>
-    <div class="form-row col-md-6">
-    <div class="form-group col-md-6">
+    <div class="form-row">
+    <div class="form-group col-md-6" style="padding: 0; padding-right: 10px">
       	<label for="input_tanggal">Tanggal TDUP</label>
-      	<input name="tanggal_tdup" type="date" class="form-control">
+      	<input name="tanggal" type="date" class="form-control">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-6" style="padding: 0px">
       	<label for="input_ms_berlaku">Masa Berlaku TDUP TDUP</label>
       	<input name="ms_berlaku" type="date" class="form-control">
     </div>
 	</div>
-    <div class="form-group col-md-6">
+    <div class="form-group">
     	<label for="file_tdup">File TDUP</label>
-    	<input name="file_bpw" type="file" class="form-control-file">
+    	<input name="file_tdup" type="file" class="form-control-file">
 	</div>
-	<div class="form-group col-md-6">
-	    <label for="status">Status Verifikasi</label>
-	    <select name="sts_verifikasi" class="form-control">
-			<option selected>-- Pilih Status --</option>
-		    <option value="1">Diterima</option>
-		    <option value="0">Tidak Diterima</option>
-	    </select>
-	</div>
-	<div class="form-group col-md-6">
-	    <label for="inputKeterangan">Keterangan</label>
-	    <textarea name="keterangan" class="form-control" rows="6"></textarea>
-  	</div>
-  	<div class="form-group col-md-6">
-      	<label for="input_tgl_verifikasi">Tanggal Verifikasi</label>
-      	<input name="tgl_verifikasi" type="date" class="form-control">
-    </div>
-    <div class="form-group col-md-6">
-	    <label for="status">Status</label>
-	    <select name="status" class="form-control">
-	    	<option selected>-- Pilih Status --</option>
-		    <option value="1">Aktif</option>
-		    <option value="0">Tidak Aktif</option>
-	    </select>
-	</div>
+
 
 	<div>
 	<button type="submit" class="btn btn-primary">Tambah TDUP</button>

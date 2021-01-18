@@ -72,8 +72,8 @@ class TDUPController extends Controller
     public function store(Request $request)
     {
         TDUP::create([
-            'id_bpw' => auth()->id_bpw(),
             'no_tdup' => request('no_tdup'),
+            'id_bpw' => Auth::bpw()->id_bpw,
             'ms_berlaku' => request('ms_berlaku'),
             'file_tdup' => request('file_tdup'),
             'sts_verifikasi' => request('sts_verifikasi'),
@@ -81,6 +81,8 @@ class TDUPController extends Controller
             'tgl_verifikasi' => request('tgl_verifikasi'),
             'status' => request('status'),
         ]);
+
+        return redirect('/list_tdupBPW');
     }
 
     /**
@@ -150,6 +152,11 @@ class TDUPController extends Controller
         //
     }
 
+    public function detailTDUPBPW($id)
+    {
+        $detailTDUPBPW = TDUP::find($id);
+        return view ('tdup/detail_tdupBPW',['detailTDUPBPW' => $detailTDUPBPW]);
+    }
     /**
      * Remove the specified resource from storage.
      *

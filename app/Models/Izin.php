@@ -21,4 +21,14 @@ class Izin extends Model
         'tgl_verifikasi',
         'status',
     ];
+
+    public function bpw()
+    {
+        return $this->belongsTo(BPW::class);
+    }
+
+    public function lku()
+    {
+        return $this->hasMany(LKU::class);
+    }
 }

@@ -97,6 +97,7 @@ Route::get('/', function () {
 		// Route TDUP oleh BPW
 		Route::get('/dashboard_bpw', 'App\Http\Controllers\TDUPController@indexDashBPW');
 		Route::get('/list_tdupBPW', 'App\Http\Controllers\TDUPController@listBPW');
+		Route::get('/tambah_tdupBPW', 'App\Http\Controllers\TDUPController@index');
 		Route::get('/edit_tdupBPW/edit/{id}', 'App\Http\Controllers\TDUPController@edit');
 		Route::patch('/editTDUPProsesBPW/{id}', 'App\Http\Controllers\TDUPController@editTDUPProsesBPW');
 

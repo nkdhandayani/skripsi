@@ -79,8 +79,8 @@
         <div class="box-body">
           <table class="table">
             <!-- <tr>
-              <td width="200px">Nama Biro</td>
-              <td width="5px">:</td>
+              <td>Nama Biro</td>
+              <td>:</td>
               <td>{{$detailBPWBPW->nm_bpw}}</td>
             </tr> -->
             <tr> 

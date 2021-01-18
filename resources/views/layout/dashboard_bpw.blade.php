@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Dashboard | Staf')
+@section('title', 'Dashboard | Biro Perjalanan Wisata')
 @section('topbaraccount')
 @section('sidemenu')
 <!-- Left side column. contains the logo and sidebar -->

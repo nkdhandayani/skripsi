@@ -43,6 +43,6 @@ class User extends Authenticatable
 
     public function bpw()
     {
-        return $this->hasMany(BPW::class, 'id_user', 'id_user');
+        return $this->hasMany(BPW::class);
     }
 }

@@ -125,7 +125,7 @@
 		    <option value="Kota Denpasar">Kota Denpasar</option>
 		    <option value="Badung">Badung</option>
 		    <option value="Gianyar">Gianyar</option>
-			<option value="Bangli">Bangli</option>
+	      <option value="Bangli">Bangli</option>
 		    <option value="Tabanan">Tabanan</option>
 		    <option value="Jembrana">Jembrana</option>
 		    <option value="Buleleng">Buleleng</option>

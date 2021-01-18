@@ -39,6 +39,21 @@ class BPW extends Authenticatable
 
     public function user()
     {
-        return $this->hasOne(User::class, 'id_user', 'id_user');
+        return $this->belongsTo(User::class);
+    }
+
+    public function tdup()
+    {
+        return $this->hasMany(TDUP::class);
+    }
+
+    public function izin()
+    {
+        return $this->hasMany(Izin::class);
+    }
+
+    public function lku()
+    {
+        return $this->hasMany(LKU::class);
     }
 }

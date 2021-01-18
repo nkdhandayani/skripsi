@@ -76,12 +76,12 @@
 <section class="content" style="padding-top: 0;"><div class="row">
   <div class="col-xs-12">     
     <div class="box">
-      <div class="box-body pad table-responsive" style="width: 150px">
+      <div class="box-body pad table-responsive">
         <td>
-          <a href="{{url('tambah_tdupBPW')}}"><button type="button" class="btn btn-block btn-primary">Tambah TDUP</button></a>
+          <a href="/tambah_tdupBPW"><button type="button" class="btn btn-primary">Tambah TDUP</button></a>
         </td>
       </div>
-
+ 
       <div class="box-body">
         <table id='listusers' class="table table-bordered table-striped">
           <thead>

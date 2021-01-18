@@ -78,7 +78,7 @@
 <form action="{{url('/editTDUPProsesBPW/' .$tdup->id_tdup) }}" method="post">
   {{csrf_field()}}
 
-  <section class="content">
+  <section class="content" style="padding-top: 0px;">
   <div class="box">
 
     <!-- /.box-header -->
@@ -90,60 +90,63 @@
     <a href="/list_tdupBPW" class="btn btn-primary" style="float: right;">Kembali</a>
   </div>
   <div style="clear: both;"></div>
-	<!-- <div class="form-group col-md-6">
-    	<label for="form_nm_bpw">Nama BPW</label>
-   		<input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw">
-  	</div> -->
-	<div class="form-group col-md-6">
-      	<label for="inputNo_TDUP">Nomor TDUP</label>
-      	<input name="no_tdup" type="text" class="form-control">
-    </div>
-    <div class="form-row col-md-6">
-    <div class="form-group col-md-6">
-      	<label for="input_tanggal">Tanggal TDUP</label>
-      	<input name="tanggal" type="date" class="form-control">
-    </div>
-    <div class="form-group col-md-6">
-      	<label for="input_ms_berlaku">Masa Berlaku TDUP</label>
-      	<input name="ms_berlaku" type="date" class="form-control">
-    </div>
-	</div>
-    <div class="form-group col-md-6">
-    	<label for="file_tdup">File TDUP</label>
-    	<input name="file_tdup" type="file" class="form-control-file">
-	</div>
-  <!-- <div class="form-group col-md-6">
-        <label for="input_tanggal_tambah">Tanggal Ditambahkan</label>
-        <input name="created_at" type="date" class="form-control">
+
+  <div class="form-group">
+      <label for="form_nm_bpw">Nama Biro Perjalanan Wisata</label>
+      <input name="nm_bpw" type="text" class="form-control" id="input_nm_bpw" value ="{{$bpw -> nm_bpw}}">
+  </div>
+  <div class="form-group">
+      <label for="form_no_tdup">Nomor TDUP</label>
+      <input name="no_tdup" type="text" class="form-control" id="input_no_tdup" value ="{{$tdup -> no_tdup}}">
+  </div>
+  <div class="form-group">
+      <label for="form_no_tdup">Nomor TDUP</label>
+      <input name="no_tdup" type="text" class="form-control" id="input_no_tdup" value ="{{$tdup -> no_tdup}}">
+  </div>
+  <div class="form-group">
+      <label for="form_tgl_tdup">Tanggal TDUP</label>
+      <input name="tanggal" type="text" class="form-control" id="input_tdl_tdup" value ="{{$tdup -> tanggal}}">
+  </div>
+  <div class="form-group">
+      <label for="form_ms_tdup">Masa Berlaku TDUP</label>
+      <input name="ms_tdup" type="text" class="form-control" id="input_ms_tdup" value ="{{$tdup -> ms_tdup}}">
+  </div>
+  <div class="form-group">
+      <label for="form_file_tdup">File TDUP</label>
+      <input name="file_tdup" type="text" class="form-control-file" id="input_file_tdup" value ="{{$tdup -> file_tdup}}">
+  </div>
+  <div class="form-group">
+      <label for="form_tgl_tambah">Tanggal Ditambahkan</label>
+      <input name="created_at" type="text" class="form-control" id="input_tgl_tambah" value ="{{$tdup -> created_at}}">
+  </div>
+  <div class="form-group">
+      <label for="form_sts_verifikasi">Status Verifikasi</label>
+      <select name="sts_verifikasi" class="form-control" id="input_sts_verifikasi" value ="{{$tdup -> sts_verifikasi}}">
+        <option selected>-- Pilih Status Verifikasi --</option>
+        <option value="1">Disetujui</option>
+        <option value="0">Tidak Disetujui</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="form_keterangan">Keterangan</label>
+      <input name="keterangan" type="text" class="form-control" id="input_keterangan" value ="{{$tdup -> keterangan}}">
+  </div>
+  <div class="form-group">
+      <label for="form_tgl_verifikasi">Tanggal Verifikasi</label>
+      <input name="tgl_verifikasi" type="text" class="form-control" id="input_tgl_verifikasi" value ="{{$tdup -> tgl_verifikasi}}">
+  </div>
+<!--   <div class="form-group">
+      <label for="form_nm_verifikator">Diverifikasi Oleh</label>
+      <input name="nm_user" type="text" class="form-control" id="input_nm_user" value ="{{$user -> nm_user}}">
   </div> -->
-	<div class="form-group col-md-6">
-	    <label for="status">Status Verifikasi</label>
-	    <select name="sts_verifikasi" class="form-control">
-			<option selected>-- Pilih Status Verifikasi --</option>
-		    <option value="1">Diterima</option>
-		    <option value="0">Tidak Diterima</option>
-	    </select>
-	</div>
-	<div class="form-group col-md-6">
-	    <label for="inputKeterangan">Keterangan</label>
-	    <textarea name="keterangan" class="form-control" rows="6"></textarea>
-  	</div>
-  	<div class="form-group col-md-6">
-      	<label for="input_tgl_verifikasi">Tanggal Verifikasi</label>
-      	<input name="tgl_verifikasi" type="date" class="form-control">
-    </div>
-    <!-- <div class="form-group col-md-6">
-    	<label for="form_nm_staf">Diverifikasi Oleh</label>
-   		<input name="nm_user" type="text" class="form-control" id="input_nm_user" value ="{{$user -> nm_user}}">
-  	</div> -->
-    <div class="form-group col-md-6">
-	    <label for="status">Status</label>
-	    <select name="status" class="form-control">
-	    	<option selected>-- Pilih Status --</option>
-		    <option value="1">Aktif</option>
-		    <option value="0">Tidak Aktif</option>
-	    </select>
-	</div>
+  <div class="form-group">
+      <label for="form_status">Status</label>
+      <select name="status" class="form-control" id="input_status" value ="{{$tdup -> status}}">
+        <option selected>-- Pilih Status --</option>
+        <option value="1">Aktif</option>
+        <option value="0">Tidak Aktif</option>
+      </select>
+  </div>
 
 	<div>
 	<button type="submit" class="btn btn-primary">Simpan TDUP</button>

@@ -22,4 +22,14 @@ class LKU extends Model
         'tgl_verifikasi',
         'status',
     ];
+
+    public function tdup()
+    {
+        return $this->belongsTo(TDUP::class);
+    }
+
+    public function izin()
+    {
+        return $this->belongsTo(Izin::class);
+    }
 }

@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\BPW as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class TDUP extends Model
 {
     use HasFactory;
 
     protected $table = "tdup";
+    protected $primaryKey = "id_tdup";
 
     public $fillable = [
     	'id_bpw',
@@ -22,4 +25,14 @@ class TDUP extends Model
         'tgl_verifikasi',
         'status',
     ];
+
+    public function bpw()
+    {
+        return $this->belongsTo(BPW::class);
+    }
+
+    public function lku()
+    {
+        return $this->hasMany(LKU::class);
+    }
 }
