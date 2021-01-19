@@ -73,13 +73,13 @@ class TDUPController extends Controller
     {
         TDUP::create([
             'no_tdup' => request('no_tdup'),
-            'id_bpw' => Auth::bpw()->id_bpw,
+            'id_bpw' => Auth::guard('bpw')->user()->id_bpw,
             'ms_berlaku' => request('ms_berlaku'),
             'file_tdup' => request('file_tdup'),
-            'sts_verifikasi' => request('sts_verifikasi'),
-            'keterangan' => request('keterangan'),
-            'tgl_verifikasi' => request('tgl_verifikasi'),
-            'status' => request('status'),
+            'sts_verifikasi' => '',
+            'keterangan' => '',
+            'tgl_verifikasi' => '',
+            'status' => '',
         ]);
 
         return redirect('/list_tdupBPW');
@@ -104,8 +104,12 @@ class TDUPController extends Controller
      */
     public function edit($id)
     {
+        $bpw = Auth::guard('bpw')->user();
         $tdup = TDUP::find($id);
-        return view ('tdup/edit_tdupBPW', compact('tdup'));
+        return view ('tdup/edit_tdupBPW', [
+            'tdup' => $tdup,
+            'bpw' => $bpw
+        ]);
     }
 
     public function editTDUPProsesBPW (Request $request, $id)
