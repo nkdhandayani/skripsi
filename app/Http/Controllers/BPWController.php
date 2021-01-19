@@ -140,7 +140,7 @@ class BPWController extends Controller
                 'jns_bpw' => request('jns_bpw'),
                 'sts_kantor' => request('sts_kantor'),
                 'nib' => request('nib'),
-                'foto_bpw' => request('foto_bpw'),
+                'foto_bpw' => file_get_contents($request->file('foto_bpw')->getRealPath()),
                 'status' => request('status'),
                 ]);
 

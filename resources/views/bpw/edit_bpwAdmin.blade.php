@@ -76,7 +76,7 @@
 
 @section('content')
 <!-- Main content -->
-<form action="{{url('/editBPWProsesAdmin/' .$bpw->id_bpw) }}" method="post">
+<form action="{{url('/editBPWProsesAdmin/' .$bpw->id_bpw) }}" method="post"  enctype="multipart/form-data">
 	@method('patch')
 	{{csrf_field()}}
 

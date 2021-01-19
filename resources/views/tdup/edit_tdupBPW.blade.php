@@ -137,7 +137,7 @@
   </div>
 <!--   <div class="form-group">
       <label for="form_nm_verifikator">Diverifikasi Oleh</label>
-      <input name="nm_user" type="text" class="form-control" id="input_nm_user" value ="{{$user -> nm_user}}">
+      <input name="nm_user" type="text" class="form-control" id="input_nm_user" value ="">
   </div> -->
   <div class="form-group">
       <label for="form_status">Status</label>

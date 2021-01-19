@@ -104,7 +104,7 @@
             @foreach ($bpws as $bpw)
               <tr>
                 <td>{{ $i }}</td>
-                <td>{{ $bpw->foto_bpw }}</td>
+                <td>@if($bpw->foto_bpw) <img width="50px" src="data:image/png;base64,{{ base64_encode($bpw->foto_bpw) }}"/> @else - @endif</td>
                 <td>{{ $bpw->nm_bpw }}</td>
                 <td>{{ $bpw->kabupaten }}</td>
                 <td>{{ $bpw->email }}</td>
